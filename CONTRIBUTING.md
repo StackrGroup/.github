@@ -1,19 +1,18 @@
 # Contribuer aux dépôts StackrGroup
 
-Ces règles valent pour tout dépôt de l'organisation qui n'a pas son propre guide, pour toute personne
-qui contribue, interne ou externe, et pour les agents IA.
+Ces règles valent pour tout dépôt de l'organisation, pour toute personne qui contribue, interne ou
+externe, et pour les agents IA. Le guide d'un dépôt n'y ajoute que ce qui lui est propre, et
+l'emporte en cas d'écart.
 
 ## Avant de commencer
 
-- Un ticket, Jira ou issue « Spec », n'entre en développement que s'il est **prêt** : contexte,
-  comportement attendu, critères d'acceptation numérotés (CA1, CA2…) et testables, dont au moins un
-  cas d'erreur ou de refus, scénarios de test, hors-scope (y compris ce qui doit rester identique),
-  comportement de l'application remplacée s'il y en a une, maquette si le ticket touche un écran,
-  dépendances levées (ADR « Accepté » si une décision d'architecture est en jeu), trois jours-homme
-  au plus, ni secret ni donnée client. Le formulaire d'issue « Spec » reprend cette liste champ par
-  champ : toute modification de l'une s'applique à l'autre.
-- Sans ticket Jira, un comportement à développer s'écrit dans une issue GitHub avec le formulaire
-  « Spec ».
+- Un ticket, Jira ou à défaut issue GitHub « Spec », n'entre en développement que s'il est **prêt**
+  : contexte, comportement attendu, critères d'acceptation numérotés (CA1, CA2…) et testables, dont
+  au moins un cas d'erreur ou de refus, scénarios de test, hors-scope (y compris ce qui doit rester
+  identique), comportement de l'application remplacée s'il y en a une, maquette si le ticket touche
+  un écran, dépendances levées (ADR « Accepté » si une décision d'architecture est en jeu), trois
+  jours-homme au plus, ni secret ni donnée client. Le formulaire d'issue « Spec » reprend cette
+  liste champ par champ : toute modification de l'une s'applique à l'autre.
 - Dans un dépôt équipé de la fabrique IA, l'étiquette `claude`, posée par une personne qui a le
   droit d'écriture, confie l'issue à la fabrique : Claude ouvre une pull request en brouillon, ou
   répond par des questions si l'issue n'est pas prête. Claude ne fusionne jamais. Poser l'étiquette,
@@ -62,8 +61,8 @@ la QA qui recette le ticket. Une section sans objet le dit (« aucune », « san
 supprimée.
 
 - **Vérifications faites** : une ligne par critère d'acceptation du ticket, avec le test Xray qui le
-  décrit (« sans objet » pour une issue « Spec », qui n'en a pas) et le test automatisé qui le joue,
-  toujours exigé. La vérification manuelle dit ce qui a été joué, où et avec quelles données.
+  décrit (sans objet pour une issue « Spec ») et le test automatisé qui le joue (toujours exigé). La
+  vérification manuelle dit ce qui a été joué, où et avec quelles données.
   Captures avant et après dès qu'un écran change, sans donnée client.
 - **Recette** : de quoi rejouer le comportement en recette sans lire le code : prérequis, données,
   étapes.

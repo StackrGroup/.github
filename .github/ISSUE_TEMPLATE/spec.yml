@@ -1,10 +1,6 @@
 name: Spec
 description: 'Un comportement à développer, prêt au sens de CONTRIBUTING.md. Titre : « Module : comportement ».'
 body:
-  - type: markdown
-    attributes:
-      value: Chaque champ reprend un point de la définition de « prêt » (CONTRIBUTING.md, « Avant de commencer »).
-
   - type: textarea
     id: context
     attributes:
@@ -43,7 +39,7 @@ body:
     id: out-of-scope
     attributes:
       label: Hors-scope
-      description: Ce qui ne change pas, même proche, et ce qui doit rester identique.
+      description: Ce que le changement ne couvre pas, même proche, et ce qui doit rester identique.
     validations:
       required: true
 
@@ -52,8 +48,10 @@ body:
     attributes:
       label: Comportement existant
       description: >-
-        Si le produit remplace une application : ce qu'elle fait aujourd'hui (lien vers sa
-        documentation), puis « reproduit » ou « s'écarte, parce que… ». « Sans objet » sinon.
+        Application remplacée, s'il y en a une : son comportement (lien), reproduit ou écart justifié.
+        « Sans objet » sinon.
+    validations:
+      required: true
 
   - type: textarea
     id: mockup
