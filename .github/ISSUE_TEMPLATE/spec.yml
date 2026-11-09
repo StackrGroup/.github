@@ -1,0 +1,84 @@
+name: Spec
+description: 'Un comportement à développer, prêt au sens de CONTRIBUTING.md. Titre : « Module : comportement ».'
+body:
+  - type: markdown
+    attributes:
+      value: Chaque champ reprend un point de la définition de « prêt » (CONTRIBUTING.md, « Avant de commencer »).
+
+  - type: textarea
+    id: context
+    attributes:
+      label: Contexte
+      description: Le module, le code concerné (fichier, fonction, écran) et pourquoi le changement est utile.
+    validations:
+      required: true
+
+  - type: textarea
+    id: behavior
+    attributes:
+      label: Comportement attendu
+    validations:
+      required: true
+
+  - type: textarea
+    id: acceptance-criteria
+    attributes:
+      label: Critères d'acceptation
+      description: Numérotés (CA1, CA2…) et testables, avec au moins un cas d'erreur ou de refus.
+      placeholder: |
+        - CA1 — Quand …, alors …
+        - CA2 — Si … (donnée invalide, droit manquant), alors …
+    validations:
+      required: true
+
+  - type: textarea
+    id: test-scenarios
+    attributes:
+      label: Scénarios de test
+      description: 'Pour chaque critère, le scénario qui le vérifie : données, étapes, résultat attendu.'
+    validations:
+      required: true
+
+  - type: textarea
+    id: out-of-scope
+    attributes:
+      label: Hors-scope
+      description: Ce qui ne change pas, même proche, et ce qui doit rester identique.
+    validations:
+      required: true
+
+  - type: textarea
+    id: existing-behavior
+    attributes:
+      label: Comportement existant
+      description: >-
+        Si le produit remplace une application : ce qu'elle fait aujourd'hui (lien vers sa
+        documentation), puis « reproduit » ou « s'écarte, parce que… ». « Sans objet » sinon.
+
+  - type: textarea
+    id: mockup
+    attributes:
+      label: Maquette
+      description: Lien Figma ou Storybook si un écran change ; « Sans objet » sinon.
+    validations:
+      required: true
+
+  - type: textarea
+    id: dependencies
+    attributes:
+      label: Dépendances
+      description: Autre ticket, ADR. « Aucune » sinon.
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: ready
+    attributes:
+      label: Prête
+      options:
+        - label: Les dépendances sont levées (ADR « Accepté »).
+          required: true
+        - label: Tient en trois jours-homme au plus.
+          required: true
+        - label: Ne contient ni secret ni donnée client, y compris dans les exemples et les captures.
+          required: true

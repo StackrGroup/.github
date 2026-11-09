@@ -3,11 +3,12 @@
      Guide de rédaction : CONTRIBUTING.md, section « Rédiger la PR »
      (https://github.com/StackrGroup/.github/blob/main/CONTRIBUTING.md#rédiger-la-pr). -->
 
-**Ticket** : <!-- clé Jira, ou « sans ticket » pour l'outillage, la CI ou la documentation -->
+**Ticket** : <!-- clé Jira, « sans ticket » pour l'outillage, la CI ou la documentation, « sans ticket (issue #N) » pour une issue « Spec » -->
 
 ## Changements
 
-<!-- Ce que fait la PR, et ce qu'elle ne fait pas (hors-scope du ticket). -->
+<!-- Ce que fait la PR, ce qu'elle ne fait pas (hors-scope du ticket), et les hypothèses prises
+     là où le ticket ne tranchait pas. -->
 
 ## Vérifications faites
 
@@ -45,7 +46,7 @@ de test) que la QA rejoue au-delà du ticket. « Aucune » si la PR est isolée.
 
 ## Definition of Done
 
-- [ ] Chaque critère d'acceptation est couvert par un test automatisé, rattaché à son test Xray.
+- [ ] Chaque critère d'acceptation est couvert par un test automatisé, rattaché à son test Xray (sans objet pour une issue « Spec »).
 - [ ] Chaque remarque de CodeRabbit est corrigée ou justifiée dans la PR.
 - [ ] Le contexte du module, et l'ADR s'il y a lieu, sont à jour si le comportement change en profondeur.
 - [ ] Aucun secret ni donnée client, y compris dans les fixtures et les captures.
