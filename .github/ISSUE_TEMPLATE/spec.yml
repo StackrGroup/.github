@@ -1,0 +1,81 @@
+name: Spec
+description: 'Un comportement à développer, prêt au sens de CONTRIBUTING.md. Titre : « Module : comportement ».'
+body:
+  - type: textarea
+    id: context
+    attributes:
+      label: Contexte
+      description: Le module, le code concerné (fichier, fonction, écran) et pourquoi le changement est utile.
+    validations:
+      required: true
+
+  - type: textarea
+    id: behavior
+    attributes:
+      label: Comportement attendu
+    validations:
+      required: true
+
+  - type: textarea
+    id: acceptance-criteria
+    attributes:
+      label: Critères d'acceptation
+      description: Numérotés (CA1, CA2…) et testables, avec au moins un cas d'erreur ou de refus.
+      placeholder: |
+        - CA1 — Quand …, alors …
+        - CA2 — Si … (donnée invalide, droit manquant), alors …
+    validations:
+      required: true
+
+  - type: textarea
+    id: test-scenarios
+    attributes:
+      label: Scénarios de test
+      description: 'Pour chaque critère, le scénario qui le vérifie : données, étapes, résultat attendu.'
+    validations:
+      required: true
+
+  - type: textarea
+    id: out-of-scope
+    attributes:
+      label: Hors-scope
+      description: Ce que le changement ne couvre pas, même proche, et ce qui doit rester identique.
+    validations:
+      required: true
+
+  - type: textarea
+    id: existing-behavior
+    attributes:
+      label: Comportement existant
+      description: >-
+        Application remplacée, s'il y en a une : son comportement (lien), reproduit ou écart justifié.
+        « Sans objet » sinon.
+    validations:
+      required: true
+
+  - type: textarea
+    id: mockup
+    attributes:
+      label: Maquette
+      description: Lien Figma ou Storybook si un écran change ; « Sans objet » sinon.
+    validations:
+      required: true
+
+  - type: textarea
+    id: dependencies
+    attributes:
+      label: Dépendances
+      description: Autre ticket, ADR. « Aucune » sinon.
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: ready
+    attributes:
+      label: Prête
+      description: Une issue qui ne coche pas tout reste possible, mais n'est pas encore prête.
+      options:
+        - label: Les dépendances sont levées (ADR « Accepté »).
+        - label: Tient en trois jours-homme au plus.
+        - label: Ne contient ni secret ni donnée client, y compris dans les exemples et les captures.
+          required: true

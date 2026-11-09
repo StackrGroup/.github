@@ -1,28 +1,39 @@
 # Contribuer aux dépôts StackrGroup
 
-Ces règles valent pour tout dépôt de l'organisation qui n'a pas son propre guide, pour toute personne
-qui contribue, interne ou externe, et pour les agents IA.
+Ces règles valent pour tout dépôt de l'organisation, pour toute personne qui contribue, interne ou
+externe, et pour les agents IA. Le guide d'un dépôt n'y ajoute que ce qui lui est propre, et
+l'emporte en cas d'écart.
 
 ## Avant de commencer
 
-- Un ticket Jira n'entre en développement que s'il est **prêt** : contexte, comportement attendu,
-  critères d'acceptation testables, scénarios de test, hors-scope, maquette si le ticket touche un
-  écran, dépendances levées (ADR « Accepté » si une décision d'architecture est en jeu), trois
-  jours-homme au plus.
+- Un ticket, Jira ou à défaut issue GitHub « Spec », n'entre en développement que s'il
+  est **prêt** : contexte, comportement attendu, critères d'acceptation numérotés (CA1, CA2…) et
+  testables, dont au moins un cas d'erreur ou de refus, scénarios de test, hors-scope (y compris ce
+  qui doit rester identique), comportement de l'application remplacée s'il y en a une, maquette si
+  le ticket touche un écran, dépendances levées (ADR « Accepté » si une décision d'architecture est
+  en jeu), trois jours-homme au plus, ni secret ni donnée client. Le formulaire d'issue « Spec »
+  reprend cette liste champ par champ : toute modification de l'une s'applique à l'autre.
+- Dans un dépôt équipé de la fabrique IA, l'étiquette `claude`, posée par une personne qui a le
+  droit d'écriture, confie l'issue à la fabrique : Claude ouvre une pull request en brouillon, ou
+  répond par des questions si l'issue n'est pas prête. Claude ne fusionne jamais. Poser l'étiquette,
+  c'est répondre du contenu de l'issue telle qu'elle est, même écrite par quelqu'un d'autre : la
+  relire avant.
 - Installation locale : voir le README du dépôt.
 
 ## Branches et commits
 
 - `main` est protégée : aucun push direct.
 - Une branche courte par ticket, préfixée par la clé Jira : `GDM2-123-bouton-primaire`. Un travail
-  sans ticket (outillage, CI, documentation) prend le type de commit en préfixe : `ci/release`.
+  sans ticket Jira (outillage, CI, documentation, issue « Spec ») prend le type de commit en
+  préfixe : `ci/release`.
 - Commits au format [Conventional Commits](https://www.conventionalcommits.org/fr/) (`feat:`, `fix:`,
   `chore:`…). Le versioning en dépend.
 
 ## Pull requests
 
 - Une préoccupation par PR, liée à son ticket Jira (clé dans le nom de la branche et dans la
-  description). Un travail sans ticket l'indique dans la description : « sans ticket ».
+  description). Un travail sans ticket Jira l'indique dans la description : « sans ticket », ou
+  « sans ticket (issue #N) » pour une issue « Spec ».
 - Titre au format Conventional Commits : il devient le message du commit de squash.
 - Avant d'ouvrir la PR, jouer les vérifications indiquées dans le README du dépôt : la CI rejoue les
   mêmes.
@@ -50,8 +61,9 @@ la QA qui recette le ticket. Une section sans objet le dit (« aucune », « san
 supprimée.
 
 - **Vérifications faites** : une ligne par critère d'acceptation du ticket, avec le test Xray qui le
-  décrit et le test automatisé qui le joue. La vérification manuelle dit ce qui a été joué, où et
-  avec quelles données. Captures avant et après dès qu'un écran change, sans donnée client.
+  décrit (sans objet pour une issue « Spec ») et le test automatisé qui le joue (toujours exigé). La
+  vérification manuelle dit ce qui a été joué, où et avec quelles données.
+  Captures avant et après dès qu'un écran change, sans donnée client.
 - **Recette** : de quoi rejouer le comportement en recette sans lire le code : prérequis, données,
   étapes.
 - **Impacts** : chaque case cochée porte une ligne d'explication. Dans un produit multi-tenant, toute
