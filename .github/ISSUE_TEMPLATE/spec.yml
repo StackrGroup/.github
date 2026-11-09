@@ -73,10 +73,9 @@ body:
     id: ready
     attributes:
       label: Prête
+      description: Une issue qui ne coche pas tout reste possible, mais n'est pas encore prête.
       options:
         - label: Les dépendances sont levées (ADR « Accepté »).
-          required: true
         - label: Tient en trois jours-homme au plus.
-          required: true
         - label: Ne contient ni secret ni donnée client, y compris dans les exemples et les captures.
           required: true
