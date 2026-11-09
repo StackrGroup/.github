@@ -14,7 +14,9 @@ n'a pas le sien.
   renvoie ici. La fabrique IA reçoit ce guide dans son prompt : une modification ici change son
   comportement dans tous les dépôts équipés.
 - **Remplacement, pas fusion** : GitHub affiche le fichier d'un dépôt à la place de celui-ci. C'est
-  pourquoi le guide d'un dépôt renvoie explicitement au guide commun.
+  pourquoi le guide d'un dépôt renvoie explicitement au guide commun. Pour les modèles d'issue, le
+  remplacement porte sur tout le dossier : un dépôt qui a son propre `.github/ISSUE_TEMPLATE/`, même
+  avec un seul `config.yml`, n'a plus le formulaire « Spec » commun.
 - **Absents des clones** : ces fichiers n'existent que dans l'interface GitHub. Un outil ou un agent
   qui travaille sur un checkout ne les voit pas, sauf si on les lui donne, comme le fait la fabrique.
 - **Dépôt public** : GitHub l'exige pour appliquer ces fichiers. Rien de confidentiel ici : ni nom de
