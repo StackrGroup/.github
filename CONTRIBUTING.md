@@ -27,7 +27,7 @@ l'emporte en cas d'écart.
   droit d'écriture, confie l'issue à la fabrique : Claude ouvre une pull request en brouillon, ou
   répond par des questions si l'issue n'est pas prête. Claude ne fusionne jamais. Poser l'étiquette,
   c'est répondre du contenu de l'issue telle qu'elle est, même écrite par quelqu'un d'autre : la
-  relire avant.
+  relire avant. Qui la pose devient propriétaire de la pull request, comme s'il en était l'auteur.
 - Installation locale : voir le README du dépôt.
 
 ## Branches et commits
@@ -55,14 +55,15 @@ l'emporte en cas d'écart.
 
 ## Relecture selon le risque
 
-La section « Impacts » du modèle de PR donne le risque. En cas de doute, le niveau supérieur
-s'applique, et le relecteur peut relever le niveau annoncé.
+GitHub n'impose aucune approbation : le propriétaire de la PR (son auteur, ou qui a lancé la
+fabrique) en répond, la fusionne, et demande un relecteur quand le risque l'exige. La section
+« Impacts » du modèle de PR donne le risque ; en cas de doute, le niveau supérieur s'applique.
 
-| Risque | PR                                                                                                               | Relecture                                                                                                                                      |
-| ------ | ---------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------- |
-| Faible | Aucun comportement ne change : documentation, outillage de développement, refactorisation couverte par les tests | CodeRabbit traité ; une approbation si les règles du dépôt l'imposent. Renovate fusionne seul les mises à jour que son preset autorise.        |
-| Normal | Un comportement change, aucune case d'impact cochée                                                              | Approuvée par un autre développeur que l'auteur                                                                                                |
-| Élevé  | Au moins une case d'impact cochée                                                                                | Approuvée par un autre développeur qui connaît la partie touchée, et qui vérifie chaque ligne d'impact : migration, isolation des tenants, ADR |
+| Risque | PR                                                                                                               | Relecture                                                                                                                                                   |
+| ------ | ---------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Faible | Aucun comportement ne change : documentation, outillage de développement, refactorisation couverte par les tests | CodeRabbit traité, puis le propriétaire fusionne. Renovate fusionne seul les mises à jour que son preset autorise.                                          |
+| Normal | Un comportement change, aucune case d'impact cochée                                                              | CodeRabbit traité, puis le propriétaire fusionne ; il demande un relecteur s'il a un doute.                                                                 |
+| Élevé  | Au moins une case d'impact cochée                                                                                | Le propriétaire demande un relecteur qui connaît la partie touchée et vérifie chaque ligne d'impact (migration, isolation des tenants, ADR) avant le merge. |
 
 ## Rédiger la PR
 
