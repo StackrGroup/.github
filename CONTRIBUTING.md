@@ -7,9 +7,8 @@ l'emporte en cas d'écart.
 ## Avant de commencer
 
 - Un ticket, Jira ou à défaut issue GitHub « Spec », n'entre en développement que s'il est
-  **prêt**. Son PRD est la seule spec du changement et n'est plus maintenu après la livraison. Il
-  vise 30 à 50 lignes de Markdown, hors titres du formulaire et réponses « Sans objet » ; au-delà
-  de 50, le ticket est à découper. Le formulaire d'issue « Spec » reprend la liste ci-dessous champ
+  **prêt**. Son PRD est la seule spec du changement et n'est plus maintenu après la livraison. Le
+  formulaire d'issue « Spec » reprend la liste ci-dessous champ
   par champ : toute modification de l'une s'applique à l'autre.
   - Le contexte et le comportement attendu.
   - Les critères d'acceptation au format EARS, un par ligne, numérotés (CA1, CA2…), chacun un
@@ -22,6 +21,8 @@ l'emporte en cas d'écart.
     écran.
   - Des dépendances levées (ADR « Accepté » si une décision d'architecture est en jeu), trois
     jours-homme au plus, ni secret ni donnée client.
+  - Un PRD de 30 à 50 lignes de Markdown, hors titres du formulaire et réponses « Sans objet » ;
+    au-delà de 50, le ticket est à découper.
 - Dans un dépôt équipé de la fabrique IA, l'étiquette `claude`, posée par une personne qui a le
   droit d'écriture, confie l'issue à la fabrique : Claude ouvre une pull request en brouillon, ou
   répond par des questions si l'issue n'est pas prête. Claude ne fusionne jamais. Poser l'étiquette,

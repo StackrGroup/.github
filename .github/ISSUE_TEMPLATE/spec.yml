@@ -81,6 +81,6 @@ body:
       options:
         - label: Les dépendances sont levées (ADR « Accepté »).
         - label: Tient en trois jours-homme au plus.
-        - label: "Le PRD tient en 50 lignes de Markdown au plus (cible 30 à 50), hors titres du formulaire et « Sans objet »."
+        - label: "Le PRD tient en 50 lignes de Markdown au plus (cible 30 à 50), hors titres du formulaire et réponses « Sans objet »."
         - label: Ne contient ni secret ni donnée client, y compris dans les exemples et les captures.
           required: true
