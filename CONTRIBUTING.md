@@ -6,13 +6,24 @@ l'emporte en cas d'écart.
 
 ## Avant de commencer
 
-- Un ticket, Jira ou à défaut issue GitHub « Spec », n'entre en développement que s'il
-  est **prêt** : contexte, comportement attendu, critères d'acceptation numérotés (CA1, CA2…) et
-  testables, dont au moins un cas d'erreur ou de refus, scénarios de test, hors-scope (y compris ce
-  qui doit rester identique), comportement de l'application remplacée s'il y en a une, maquette si
-  le ticket touche un écran, dépendances levées (ADR « Accepté » si une décision d'architecture est
-  en jeu), trois jours-homme au plus, ni secret ni donnée client. Le formulaire d'issue « Spec »
-  reprend cette liste champ par champ : toute modification de l'une s'applique à l'autre.
+- Un ticket, Jira ou à défaut issue GitHub « Spec », n'entre en développement que s'il est
+  **prêt**. Son PRD est la seule spec du changement et n'est plus maintenu après la livraison. Il
+  tient en 30 à 50 lignes de Markdown ; plus long, le ticket est à découper. Il donne :
+
+  - le contexte et le comportement attendu ;
+  - les critères d'acceptation au format EARS, un par ligne, numérotés (CA1, CA2…), chacun un
+    scénario de test : `Quand <événement>, l'application <réponse>`, `Tant que <état>, …`,
+    `Si <condition>, alors …`, `Là où <option>, …` ou `L'application doit …`, dont au moins un
+    `Si …, alors …` d'erreur ou de refus ;
+  - le hors-scope, y compris ce qui doit rester identique ;
+  - le comportement de l'application remplacée s'il y en a une, la maquette si le ticket touche un
+    écran ;
+  - des dépendances levées (ADR « Accepté » si une décision d'architecture est en jeu), trois
+    jours-homme au plus, ni secret ni donnée client.
+
+  Le formulaire d'issue « Spec » reprend cette liste champ par champ : toute modification de l'une
+  s'applique à l'autre.
+
 - Dans un dépôt équipé de la fabrique IA, l'étiquette `claude`, posée par une personne qui a le
   droit d'écriture, confie l'issue à la fabrique : Claude ouvre une pull request en brouillon, ou
   répond par des questions si l'issue n'est pas prête. Claude ne fusionne jamais. Poser l'étiquette,
