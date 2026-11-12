@@ -26,14 +26,16 @@ body:
     attributes:
       label: Critères d'acceptation
       description: |
-        Format EARS, un critère par ligne, numéroté (CA1, CA2…) ; chacun est un scénario de test.
+        Format EARS, un critère par ligne, numéroté (CA1, CA2…) ; chacun est un scénario de test,
+        avec sa donnée et son résultat observable.
         Formes : `Quand <événement>, l'application <réponse>`, `Tant que <état>, …`,
         `Si <condition>, alors …`, `Là où <option>, …` ou `L'application doit …`.
         Au moins un `Si …, alors …` d'erreur ou de refus. Exemple :
 
         - CA1 — Quand l'utilisateur valide le formulaire, l'application enregistre la demande et affiche sa référence.
-        - CA2 — Tant que la demande est en brouillon, l'application permet de la modifier.
+        - CA2 — Tant que la demande est en brouillon, l'application affiche le bouton « Modifier ».
         - CA3 — Si le montant est négatif, alors l'application refuse la demande et affiche « Montant invalide ».
+      placeholder: "- CA1 — Quand …, l'application …"
     validations:
       required: true
 
@@ -79,6 +81,6 @@ body:
       options:
         - label: Les dépendances sont levées (ADR « Accepté »).
         - label: Tient en trois jours-homme au plus.
-        - label: Le PRD tient en 30 à 50 lignes de Markdown, sinon découper le ticket.
+        - label: "Le PRD tient en 50 lignes de Markdown au plus (cible 30 à 50), hors titres du formulaire et « Sans objet »."
         - label: Ne contient ni secret ni donnée client, y compris dans les exemples et les captures.
           required: true
