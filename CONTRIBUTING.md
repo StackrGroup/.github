@@ -8,8 +8,8 @@ l'emporte en cas d'écart.
 
 - Un ticket, Jira ou à défaut issue GitHub « Spec », n'entre en développement que s'il est
   **prêt**. Son PRD est la seule spec du changement et n'est plus maintenu après la livraison. Le
-  formulaire d'issue « Spec » reprend la liste ci-dessous champ
-  par champ : toute modification de l'une s'applique à l'autre.
+  formulaire d'issue « Spec » reprend la liste ci-dessous champ par champ : toute modification de
+  l'une s'applique à l'autre.
   - Le contexte et le comportement attendu.
   - Les critères d'acceptation au format EARS, un par ligne, numérotés (CA1, CA2…), chacun un
     scénario de test avec sa donnée et son résultat observable :
