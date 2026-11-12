@@ -1,6 +1,11 @@
 name: Spec
-description: 'Un comportement à développer, prêt au sens de CONTRIBUTING.md. Titre : « Module : comportement ».'
+description: "Le PRD d'un comportement à développer, prêt au sens de CONTRIBUTING.md. Titre : « Module : comportement »."
 body:
+  - type: markdown
+    attributes:
+      value: >-
+        Ce PRD est la seule spec du changement et n'est plus maintenu après la livraison.
+
   - type: textarea
     id: context
     attributes:
@@ -20,18 +25,17 @@ body:
     id: acceptance-criteria
     attributes:
       label: Critères d'acceptation
-      description: Numérotés (CA1, CA2…) et testables, avec au moins un cas d'erreur ou de refus.
-      placeholder: |
-        - CA1 — Quand …, alors …
-        - CA2 — Si … (donnée invalide, droit manquant), alors …
-    validations:
-      required: true
+      description: |
+        Format EARS, un critère par ligne, numéroté (CA1, CA2…) ; chacun est un scénario de test,
+        avec sa donnée et son résultat observable.
+        Formes : `Quand <événement>, l'application <réponse>`, `Tant que <état>, …`,
+        `Si <condition>, alors …`, `Là où <option>, …` ou `L'application doit …`.
+        Au moins un `Si …, alors …` d'erreur ou de refus. Exemple :
 
-  - type: textarea
-    id: test-scenarios
-    attributes:
-      label: Scénarios de test
-      description: 'Pour chaque critère, le scénario qui le vérifie : données, étapes, résultat attendu.'
+        - CA1 — Quand l'utilisateur valide le formulaire, l'application enregistre la demande et affiche sa référence.
+        - CA2 — Tant que la demande est en brouillon, l'application affiche le bouton « Modifier ».
+        - CA3 — Si le montant est négatif, alors l'application refuse la demande et affiche « Montant invalide ».
+      placeholder: "- CA1 — Quand …, l'application …"
     validations:
       required: true
 
@@ -77,5 +81,6 @@ body:
       options:
         - label: Les dépendances sont levées (ADR « Accepté »).
         - label: Tient en trois jours-homme au plus.
+        - label: "Le PRD tient en 50 lignes de Markdown au plus (cible 30 à 50), hors titres du formulaire et réponses « Sans objet »."
         - label: Ne contient ni secret ni donnée client, y compris dans les exemples et les captures.
           required: true
