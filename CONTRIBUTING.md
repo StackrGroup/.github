@@ -21,8 +21,8 @@ l'emporte en cas d'écart.
     écran.
   - Des dépendances levées (ADR « Accepté » si une décision d'architecture est en jeu), trois
     jours-homme au plus, ni secret ni donnée client.
-  - Un PRD de 30 à 50 lignes de Markdown, hors titres du formulaire et réponses « Sans objet » ;
-    au-delà de 50, le ticket est à découper.
+  - Un PRD de 50 lignes de Markdown au plus (cible 30 à 50), hors titres du formulaire et réponses
+    « Sans objet » ; au-delà, le ticket est à découper.
 - Dans un dépôt équipé de la fabrique IA, l'étiquette `claude`, posée par une personne qui a le
   droit d'écriture, confie l'issue à la fabrique : Claude ouvre une pull request en brouillon, ou
   répond par des questions si l'issue n'est pas prête. Claude ne fusionne jamais. Poser l'étiquette,
